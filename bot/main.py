@@ -10,12 +10,8 @@ client = discord.Client(intents=intents)
 async def on_ready():
     print(f'We have logged in as {client.user}')
 
-@client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
-
-    if message.content.startswith('$hello'):
-        await message.channel.send('Hello!')
+@bot.slash_command(guild_ids=[your, guild_ids, here])
+async def hello(ctx):
+    await ctx.respond("Hello!")
 
 client.run(config.TEST_TOKEN)
