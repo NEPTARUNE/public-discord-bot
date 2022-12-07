@@ -5,9 +5,9 @@ bot = discord.Bot()
 
 @bot.event
 async def on_ready():
-    print(f'We have logged in as {client.user}')
+    print(f'We have logged in as {bot.user}')
 
-@bot.slash_command(guild_ids=1006776654934323260)
+@bot.slash_command(guild_ids=[1006776654934323260])
 async def hello(ctx):
     await ctx.respond("Hello!")
 
