@@ -1,17 +1,14 @@
 import discord
 import config
 
-intents = discord.Intents.default()
-intents.message_content = True
+bot = discord.Bot()
 
-client = discord.Client(intents=intents)
-
-@client.event
+@bot.event
 async def on_ready():
     print(f'We have logged in as {client.user}')
 
-@bot.slash_command(guild_ids=[your, guild_ids, here])
+@bot.slash_command(guild_ids=1006776654934323260)
 async def hello(ctx):
     await ctx.respond("Hello!")
 
-client.run(config.TEST_TOKEN)
+bot.run(config.TEST_TOKEN)
