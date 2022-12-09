@@ -14,4 +14,9 @@ async def shorturl(ctx, url: str):
     shortened_link = short.tinyurl.short(url)
     await ctx.respond(f"Your shortened URL is:" + shortened_link)
 
+@bot.slash_command(guild_ids=[1006776654934323260], name="expandurl", description="Expand your TinyURL")
+async def expandurl(ctx, url: str):
+    shortened_link = short.tinyurl.expand(url)
+    await ctx.respond(f"Your expanded URL is:" + shortened_link)
+
 bot.run(config.TEST_TOKEN)
